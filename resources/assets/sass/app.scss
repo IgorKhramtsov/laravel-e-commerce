@@ -1,0 +1,141 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Variables
+@import "variables";
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~font-awesome/scss/font-awesome";
+@import "globals";
+@import '~vue-awesome-notifications/dist/styles/style.scss';
+
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    height: 60px;
+    .navbar-brand {
+        line-height: 40px;
+    }
+    .fa {
+        font-size: 2em;
+
+    }
+    .fa-stack[data-count] {
+        &.has-badge::after {
+            opacity: 1;
+        }
+        &::after {
+            font-family: "Segoe UI";
+            position: absolute;
+            top: -4px;
+            content: attr(data-count);
+            font-size: 90%;
+            padding: 0.25em 0.5em;
+            padding-bottom: 0.5em;
+            border-radius: 999px;
+            line-height: 1.05em;
+            color: white;
+            background: #f67752;
+            text-align: center;
+            min-width: 1.3em;
+            font-weight: bold;
+            transition: all .1s;
+            opacity: 0;
+        }
+    }
+    .nav-basket {
+        float: right;
+
+        &:hover {
+            .fa-stack[data-count]:after {
+                background: #fff;
+                color: $accent-color;
+            }
+        }
+    }
+
+}
+
+.main {
+    background: $panel-bg;
+    margin-top: 80px;
+    box-shadow: 5px 5px 10px $shadow-bg;
+    .login {
+        align-items: center;
+        text-align: center;
+        line-height: 100%;
+        position: relative;
+        &-error {
+            color: $error-color;
+            position: absolute;
+            top: 30px;
+            width: 200px;
+            text-align: center;
+            left: calc(20% - 100px);
+        }
+        button {
+            width: 200px;
+        }
+        .image-container {
+            padding: 0;
+            text-align: center;
+            button {
+                background: rgba(#333, 0.5);
+                position: absolute;
+                height: 40px;
+                top: calc(50% - 20px);
+                width: 160px;
+                left: calc(50% - 80px);
+                color: #eaeaea;
+                border-width: 1px;
+            }
+            img {
+                width: inherit;
+            }
+        }
+        .login-form {
+            .input {
+                position: relative;
+                .forgot-pass {
+                    position: absolute;
+                    width: fit-content;
+                    bottom: -17px;
+                    right: 0;
+                    font-size: .9em;
+                }
+            }
+            .material-switch {
+                width: 200px;
+                margin: 0 auto;
+                margin-top: 30px;
+                height: 25px;
+                position: relative;
+                span {
+                    position: absolute;
+                    left: 0;
+                }
+                label {
+                    display: inline;
+                    right: -60px;
+                }
+            }
+            button {
+                margin-top: 5px;
+            }
+            .checkbox {
+
+            }
+
+        }
+        .register-form {
+            display: none;
+            button {
+                width: 200px;
+            }
+        }
+    }
+}
+
+
+
+
+

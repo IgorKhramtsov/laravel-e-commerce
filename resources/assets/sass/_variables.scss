@@ -1,0 +1,33 @@
+
+// Body
+$accent-color: #f67752;
+$accent-color-darken: #9B362C;
+$body-bg: #fdfbf9;
+$body-gr-end: #fff9f2;
+$shadow-bg: #eadfd8;
+$panel-bg: #fffefc;
+$border-color: #eadfd8;
+$text-color: #333;
+$placeholder-color: #666;
+$error-color: #e94a35;
+$panel-bg-darken: #ea724f;
+$text-light-color: #e4d6d7;
+$text-accent-color: #ceb5b7;
+$valid-color: green;
+$text-secondary-color: lighten($text-color, 50%);
+
+$md-radio-checked-color: $accent-color;
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+
+
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px;
+$md-radio-ripple-size: 15px;
+
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+
+$awn-success-color: $accent-color;

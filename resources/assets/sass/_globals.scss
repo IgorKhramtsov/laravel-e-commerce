@@ -1,0 +1,307 @@
+body {
+    background: radial-gradient($body-bg, lighten($shadow-bg, 5%));
+    color: $text-color;
+    text-decoration: none;
+    font-size: 14px;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+        color: $accent-color;
+    }
+}
+
+.fa {
+    color: lighten($text-color, 50%);
+}
+
+.navbar .container {
+    display: block;
+    form, .button {
+        float: right;
+    }
+}
+
+.input {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    input, textarea {
+        outline: 0;
+        width: 100%;
+        padding: 8px 15px;
+        border-radius: 3px;
+        border: $border-color 1px solid;
+        &.error {
+            border-color: $error-color;
+            & + label {
+                color: $error-color;
+            }
+        }
+        &:valid, &:focus {
+            & + label {
+                top: -8px;
+                color: #333;
+                font-size: .9em;
+            }
+        }
+    }
+    label {
+        transition: top .2s;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        padding: 0 5px;
+        background: $panel-bg;
+        cursor: pointer;
+        color: $placeholder-color;
+    }
+}
+
+button {
+    $bgc: darken($panel-bg, 5%);
+    $bgc-accent: $accent-color;
+    transition: .2s;
+    outline: none;
+    color: #333;
+    text-transform: uppercase;
+    background: $bgc;
+    border-radius: 3px;
+    border: $border-color 1px solid;
+    cursor: pointer;
+    &.accent {
+        background: $bgc-accent;
+        color: #fff;
+        font-weight: bold;
+        &:hover {
+            background-color: darken($bgc-accent, 3%);
+            box-shadow: 2px 2px 1px rgba(#333, .1);
+
+        }
+        &:active {
+            background-color: darken($bgc-accent, 3%);
+            box-shadow: inset 2px 2px 1px rgba(#333, .1);
+        }
+        &.disabled {
+            background: none;
+            color: $text-light-color;
+            &:hover, &:active {
+                background: none;
+                box-shadow: none;
+                cursor: default;
+            }
+        }
+    }
+    padding: 10px 15px;
+    .fa {
+        font-size: 1.5em;
+        &::before {
+            position: relative;
+            top: 2px;
+            color: inherit;
+        }
+    }
+    &:hover {
+        box-shadow: 2px 2px 1px rgba(#555, .1);
+        background-color: lighten($bgc, 2%);
+    }
+    &:active {
+        box-shadow: inset 2px 2px 1px rgba(#555, .1);
+        background-color: darken($bgc, 3%);
+    }
+    &.text {
+        background: none;
+        padding: 0;
+        margin: 10px 15px;
+        border: none;
+        color: $accent-color;
+        font-weight: bold;
+        &:hover {
+            .fa {
+                color: inherit;
+            }
+        }
+        &:hover {
+            box-shadow: none;
+        }
+        &.disabled {
+            color: lighten($text-color, 40%);
+            cursor: default;
+        }
+    }
+    &.outline {
+        border: $border-color 1px solid;
+        border-radius: 2px;
+        padding: 10px 15px;
+        margin: 0;
+
+        &:hover {
+            background: rgba(#333, .02);
+        }
+        &:focus {
+            background: rgba(#333, .05);
+        }
+    }
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.05em;
+    color: $accent-color;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    border: $border-color 1px solid;
+    border-radius: 2px;
+    &:hover {
+        background: rgba(#333, .02);
+    }
+    &:focus {
+        background: rgba(#333, .05);
+    }
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    cursor: pointer;
+}
+
+
+
+/* https://bootsnipp.com/snippets/featured/material-design-switch */
+.material-switch > input[type="checkbox"] {
+    display: none;
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0;
+    position: relative;
+    width: 40px;
+    top: 7px;
+    right: -10px;
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: darken($panel-bg, 5%);
+    opacity: 0.5;
+}
+
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: darken($panel-bg, 5%);
+    left: 20px;
+}
+
+
+/* https://codepen.io/hansmaad/pen/zBdzxp */
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0);
+    }
+    50% {
+        box-shadow: 0 0 0 $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 $md-radio-ripple-size rgba(0, 0, 0, 0);
+    }
+}
+
+.md-radio {
+    margin: 16px 0;
+
+    &.md-radio-inline {
+        display: inline-block;
+    }
+
+    input[type="radio"] {
+        display: none;
+        &:checked + label:before {
+            border-color: $md-radio-checked-color;
+            animation: ripple 0.2s linear forwards;
+        }
+        &:checked + label:after {
+            transform: scale(1);
+        }
+    }
+
+    label {
+        display: inline-block;
+        height:$md-radio-size;
+        position: relative;
+        padding: 0 ($md-radio-size + 10px);
+        margin-bottom: 0;
+        cursor: pointer;
+        vertical-align: bottom;
+        &:before, &:after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            transition: all .3s ease;
+            transition-property: transform, border-color;
+        }
+        &:before {
+            left: 0;
+            top: 0;
+            width: $md-radio-size;
+            height: $md-radio-size;
+            border: 2px solid $md-radio-border-color;
+        }
+        &:after {
+            top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+            left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+            width:$md-radio-checked-size;
+            height:$md-radio-checked-size;
+            transform: scale(0);
+            background:$md-radio-checked-color;
+        }
+    }
+}
